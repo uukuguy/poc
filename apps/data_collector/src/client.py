@@ -21,7 +21,7 @@ client.py
 
 '''
 import sys
-sys.path.append('./thrift/python/data_collector')
+sys.path.append('./thrift/gen-py/data_collector')
 import msgpack
 
 from thrift import Thrift
@@ -36,7 +36,7 @@ sys.path.append('..')
 from utils.logger import Logger, AppWatch
 
 
-DATACOLLECTOR_IP = '139.196.189.136'
+DATACOLLECTOR_IP = '127.0.0.1'
 PORT = 20161
 
 def main():
