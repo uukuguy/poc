@@ -36,24 +36,25 @@ sys.path.append(sys.path[0] + '/' + '..')
 from utils.logger import Logger, AppWatch
 
 
-DATACOLLECTOR_IP = '127.0.0.1'
+#DATACOLLECTOR_IP = '139.196.189.136'
 PORT = 20161
 
 def main():
-    if len(sys.argv) != 7:
-        print "Usage: sys.argv[0] <collection_name> <year> <month> <day> <hour> <minute>"
+    if len(sys.argv) != 8:
+        print "Usage: sys.argv[0] <data_collector_ip> <collection_name> <year> <month> <day> <hour> <minute>"
         print "       collection_name: 'baidu_tieba'"
         exit(-1)
 
-    collection_name = sys.argv[1]
-    year = int(sys.argv[2])
-    month = int(sys.argv[3])
-    day = int(sys.argv[4])
-    hour = int(sys.argv[5])
-    minute = int(sys.argv[6])
+    datacollector_ip = sys.argv[1]
+    collection_name = sys.argv[2]
+    year = int(sys.argv[3])
+    month = int(sys.argv[4])
+    day = int(sys.argv[5])
+    hour = int(sys.argv[6])
+    minute = int(sys.argv[7])
 
     try:
-        sock = TSocket.TSocket(DATACOLLECTOR_IP, PORT)
+        sock = TSocket.TSocket(datacollector_ip, PORT)
         transport = TTransport.TBufferedTransport(sock)
         protocol = TBinaryProtocol.TBinaryProtocol(transport)
         client = DataCollector.Client(protocol)
