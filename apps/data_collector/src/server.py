@@ -21,7 +21,7 @@ server.py
 
 '''
 import sys
-sys.path.append('./thrift/gen-py/data_collector')
+sys.path.append(sys.path[0] + '/' + './thrift/gen-py/data_collector')
 
 from thrift import Thrift
 from thrift.transport import TSocket
@@ -33,7 +33,7 @@ from thrift.server import TProcessPoolServer
 
 import DataCollector
 
-sys.path.append('..')
+sys.path.append(sys.path[0] + '/' + '..')
 from utils.logger import Logger, AppWatch
 
 import data_collector

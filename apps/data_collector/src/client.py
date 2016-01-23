@@ -21,7 +21,7 @@ client.py
 
 '''
 import sys
-sys.path.append('./thrift/gen-py/data_collector')
+sys.path.append(sys.path[0] + '/' + './thrift/gen-py/data_collector')
 import msgpack
 
 from thrift import Thrift
@@ -32,7 +32,7 @@ from thrift.protocol import TBinaryProtocol
 import DataCollector
 from io import BytesIO
 
-sys.path.append('..')
+sys.path.append(sys.path[0] + '/' + '..')
 from utils.logger import Logger, AppWatch
 
 

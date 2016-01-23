@@ -11,6 +11,6 @@ VOLUME ["/data"]
 
 EXPOSE 20161
 
-WORKDIR '/apps/data_collector/src/data_collector'
-ENTRYPOINT './server.py'
+WORKDIR '/apps/data_collector'
+ENTRYPOINT './src/server.py'
 
